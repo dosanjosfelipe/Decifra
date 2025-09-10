@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content="Decifra: Jogo da forca diário. Adivinhe a palavra do dia, teste seu vocabulário e divirta-se todos os dias com nosso jogo online gratuito."
+    />
+    <meta
+      name="keywords"
+      content=" Decifra, Diário, Palavras, Forca, Jogo da Forca, Jogo de Palavras, Jogo Diário, Forca Online Diário, Decifra Palavra do Dia, Jogo Geografia, Jogo países"
+    />
+    <meta
+      name="google-site-verification"
+      content="2KsjjRBWoCJC2ahVAngDY3EvPFufJu-MkUPLhxQEb3A"
+    />
+    <meta name="author" content="Felipe dos Anjos" />
+
+    <link
+      rel="icon"
+      href="./static/assets/img/decifra-logo.svg"
+      type="image/svg"
+    />
+    <link rel="stylesheet" href="./static/style/style.css" />
+    <link rel="canonical" href="https://decifraa.vercel.app/" />
+
+    <title>Decifra! — Jogo da Forca Diário</title>
+  </head>
+  <body>
+    <script>
+      function openHowToPlay() {
+        document.getElementById("howToPlay").style.display = "flex";
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const overlay = document.getElementById("howToPlay");
+        const content = document.querySelector(".howToPlay-content");
+
+        overlay.addEventListener("click", function (event) {
+          if (!content.contains(event.target)) {
+            document.getElementById("howToPlay").style.display = "none";
+          }
+        });
+      });
+    </script>
+    <script type="module" src="./static/script/main.js"></script>
+    <div class="top-container">
+      <nav>
+        <a href="./index.html" class="themes">países</a>
+        <a href="./pages/capital.html" class="themes">capitais</a>
+      </nav>
+
+      <h1 class="title">DECIFRA!</h1>
+      <button onclick="openHowToPlay()" class="headerButtons1">
+        <img
+          src="./static/assets/img/howToPlayIcon.png"
+          alt="Como jogar"
+          class="howToPlayButton"
+        />
+      </button>
+      <a href="pages/sobre.html" class="headerButtons2" target="_blank">
+        <img
+          src="./static/assets/img/botao-de-informacao.png"
+          alt="Sobre mim"
+          class="howToPlayButton"
+        />
+      </a>
+    </div>
+
+    <div class="howToPlay-overlay" id="howToPlay">
+      <div class="howToPlay-content">
+        <h2>Como Jogar?</h2>
+        <p>
+          Descubra a palavra correta inserindo letras que você acredita estar
+          presentes nela. O tema da palavra é exibido no canto esquerdo da tela.
+          <br /><br />
+          As letras já utilizadas aparecem no canto direito.
+          <br /><br />
+          Se a letra escolhida estiver correta, ela será revelada em todas as
+          posições em que aparece na palavra. Caso contrário, você perderá uma
+          vida. O número de vidas restantes é mostrado logo abaixo do tema.
+          <br /><br />
+          Você começa com 5 vidas. Para vencer, é necessário descobrir a palavra
+          antes que todas as vidas se esgotem. Caso perca todas as vidas antes
+          de acertar, a partida será encerrada com derrota.
+        </p>
+      </div>
+    </div>
+    <audio
+      src="./static/assets/aud/winSound.mp3"
+      id="winSound"
+      preload="auto"
+    ></audio>
+    <audio
+      src="./static/assets/aud/loseSound.mp3"
+      id="loseSound"
+      preload="auto"
+    ></audio>
+
+    <main class="mid-container">
+      <div class="left-mid-container">
+        <div class="theme-container">
+          <span class="theme">PAÍSES</span>
+        </div>
+        <div class="hearts-container">
+          <span class="hearts" id="heart1">
+            <img
+              src="./static/assets//img/heart.png"
+              alt="Coração de quantidade de vida"
+            />
+          </span>
+          <span class="hearts" id="heart2">
+            <img
+              src="./static/assets//img/heart.png"
+              alt="Coração de quantidade de vida"
+            />
+          </span>
+          <span class="hearts" id="heart3">
+            <img
+              src="./static/assets//img/heart.png"
+              alt="Coração de quantidade de vida"
+            />
+          </span>
+          <span class="hearts" id="heart4">
+            <img
+              src="./static/assets//img/heart.png"
+              alt="Coração de quantidade de vida"
+            />
+          </span>
+          <span class="hearts" id="heart5">
+            <img
+              src="./static/assets//img/heart.png"
+              alt="Coração de quantidade de vida"
+            />
+          </span>
+        </div>
+      </div>
+      <div class="middle-mid-container">
+        <span class="resultGame" id="resultGame"></span>
+        <span class="letterAlreadyUsed" id="letterAlreadyUsed"></span>
+        <span class="realWord" id="realWord"></span>
+      </div>
+      <div class="right-mid-container">
+        <span class="usedLetters" id="usedLetters"></span>
+      </div>
+    </main>
+
+    <section class="word-container" id="wordContainer"></section>
+
+    <!-- letras e seus espaços vazios são inseridos no JS -->
+
+    <!-- Teclado para celular -->
+    <div id="keyboard"></div>
+    <script type="module" src="./static/script/api.js"></script>
+  </body>
+</html>
