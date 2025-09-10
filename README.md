@@ -4,10 +4,11 @@
 
 **Decifra** é um jogo da forca diário desenvolvido para a web.  
 O jogo esta disponivel na internet, o deploy foi feito no Vercel (frontend) e Render (backend).  
-[Acesse o Decifra](https://decifraa.vercel.app)  
-O projeto nesse repositório está estruturado em duas partes principais — `frontend` e `backend` — para ser mais intuitivo.
+[Acesse o Decifra](https://decifraa.vercel.app)
 
 ---
+
+O projeto nesse repositório está estruturado em duas partes principais — `frontend` e `backend` — para ser mais intuitivo.
 
 ## 🛠 Tecnologias Utilizadas
 
